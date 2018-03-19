@@ -17,6 +17,10 @@ services:
   - sqlite 
   
 build:
+  pre_ci_boot:
+    image_name: drydock/u16all
+    image_tag: v5.6.1
+    pull: true
     
   ci:
     - python --version    
@@ -43,4 +47,3 @@ build:
     - which mysql
     - mysql -V #|| true
     - which sqlite3 #|| true
-    
